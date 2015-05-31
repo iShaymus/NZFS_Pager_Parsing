@@ -1,6 +1,10 @@
 import re
 import sys
 
+# The New Zealand Fire Service (NZFS) uses a specific pager message format
+# (UNIT123, UNIT1234) 111-STRU (Alarm Type SMOKE) (Box 123) SOME BUILDING SOME ADDRESS. (XStr A STREET) .JOB DETAILS. #F12345
+# the fields (Alarm Type *) and (Box *) are optional and do not appear in every message.
+
 sInput = str(sys.argv[1:])
 
 # Matches appliance names using the consistent four uppercase letters followed by three - four numbers.
