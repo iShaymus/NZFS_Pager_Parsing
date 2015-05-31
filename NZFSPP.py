@@ -4,11 +4,11 @@ import sys
 sInput = str(sys.argv[1:])
 
 # Matches appliance names using the consistent four uppercase letters followed by three - four numbers.
-pTrucks = ','.join(re.findall(r'\w[A-Z]{3}\d[0-9]{2,3}', sInput))
+pRespondingUnits = ','.join(re.findall(r'\w[A-Z]{3}\d[0-9]{2,3}', sInput))
 
 # Matches source and job type using the - as a guide, this section is always proceeded by the trucks on the job
 # therefore is always proceeded by a ) and a space. Allows between 3-9 characters either side of the - this is
-# to allow such variations as 911-RESC, FAA-AIRCRAFT etc.
+# to allow such variations as 111-RESC, CAA-AIRCRAFT etc.
 pJobSource = ''.join(re.findall(r'\) ([A-Za-z1-9]{2,8}-[A-Za-z1-9]{2,8})', sInput))
 
 # Gets address by starting at (but ignoring) the job source e.g. -RESC and capturing everything until the next . period
@@ -34,7 +34,7 @@ pAlarmDetails = ''.join(re.findall(r' \((Alarm .*?)\) ', sInput))
 # Get optional Box type which is always presented with a space (Box
 pBoxDetails = ''.join(re.findall(r' (\(Box .*?\))', sInput))
 
-print "Responding Trucks:  " + pTrucks
+print "Responding Trucks:  " + pRespondingUnits
 print "Job Source / Type:  " + pJobSource
 print "Address:            " + pAddress
 print "Cross Streets:      " + pCrossStreet
