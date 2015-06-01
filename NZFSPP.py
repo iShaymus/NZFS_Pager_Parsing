@@ -1,5 +1,4 @@
 import re
-import sys
 
 # The New Zealand Fire Service (NZFS) uses a specific pager message format
 # (UNIT123, UNIT1234) 111-STRU (Alarm Type SMOKE) (Box 123) SOME BUILDING SOME ADDRESS. (XStr A STREET) .JOB DETAILS. #F12345
